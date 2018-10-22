@@ -86,8 +86,7 @@ Modify the file as shown below. </br>
 > ONBOOT="yes" </br>
 > MASTER=bond0 </br>
 > SLAVE=yes </br>
- </br>
-## Then, Edit file /etc/sysconfig/network-scripts/ifcfg-enp0s9,
+### Then, Edit file /etc/sysconfig/network-scripts/ifcfg-enp0s9,
 ### vi /etc/sysconfig/network-scripts/ifcfg-enp0s9
 ### Modify the file as shown below.
 > HWADDR=08:00:27:E7:ED:8E </br>
