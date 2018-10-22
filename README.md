@@ -60,3 +60,51 @@ Thanks for using MariaDB!
 > FLUSH PRIVILEGES;
 Выходим из базы:
 > exit
+_____
+# Configure Network interfaces
+Now, we should modify both(enp0s8 & enp0s9) configuration files as shown below. First, let us start from enp0s8.
+Edit file /etc/sysconfig/network-scripts/ifcfg-enp0s8,
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s8
+
+Modify the file as shown below.
+> HWADDR="08:00:27:04:03:86"
+> TYPE="Ethernet"
+> BOOTPROTO="none"
+> DEFROUTE="yes"
+> PEERDNS="yes"
+> PEERROUTES="yes"
+> IPV4_FAILURE_FATAL="no"
+> IPV6INIT="yes"
+> IPV6_AUTOCONF="yes"
+> IPV6_DEFROUTE="yes"
+> IPV6_PEERDNS="yes"
+> IPV6_PEERROUTES="yes"
+> IPV6_FAILURE_FATAL="no"
+> NAME="enp0s8"
+> UUID="a97b23f2-fa87-49de-ac9b-39661ba9c20f"
+> ONBOOT="yes"
+> MASTER=bond0
+> SLAVE=yes
+
+## Then, Edit file /etc/sysconfig/network-scripts/ifcfg-enp0s9,
+### vi /etc/sysconfig/network-scripts/ifcfg-enp0s9
+### Modify the file as shown below.
+> HWADDR=08:00:27:E7:ED:8E
+> TYPE=Ethernet
+> BOOTPROTO=none
+> DEFROUTE=yes
+> PEERDNS=yes
+> PEERROUTES=yes
+> IPV4_FAILURE_FATAL=no
+> IPV6INIT=yes
+> IPV6_AUTOCONF=yes
+> IPV6_DEFROUTE=yes
+> IPV6_PEERDNS=yes
+> IPV6_PEERROUTES=yes
+> IPV6_FAILURE_FATAL=no
+> NAME=enp0s9
+> UUID=e2352c46-e1f9-41d2-98f5-af24b127b3e7
+> ONBOOT=yes
+> MASTER=bond0
+> SLAVE=yes
+#### Save and close the files.
