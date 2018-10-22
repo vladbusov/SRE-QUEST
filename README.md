@@ -48,18 +48,18 @@ Thanks for using MariaDB!
 Создаем базу для WordPress:
 Входим в базу данных:
 # mysql -u root -p
-Придумываем имя для базы данных и создаем ее:
-> CREATE DATABASE wp1;
-Создаем пользователя для этой базы данных:
-> CREATE USER wp@localhost;
-Устанавливаем ему пароль:
-> SET PASSWORD FOR wp@localhost= PASSWORD("wp-password");
-Делаем этого пользователя хозяином новоиспеченной базы:
-> GRANT ALL PRIVILEGES ON wp1.* TO wp@localhost IDENTIFIED BY 'wp-password';
-Перезапускаем привилегии базы:
-> FLUSH PRIVILEGES;
-Выходим из базы:
-> exit
+Придумываем имя для базы данных и создаем ее: </br>
+ > CREATE DATABASE wp1; </br>
+Создаем пользователя для этой базы данных: </br>
+ > CREATE USER wp@localhost; </br>
+Устанавливаем ему пароль: </br>
+ > SET PASSWORD FOR wp@localhost= PASSWORD("wp-password"); </br>
+Делаем этого пользователя хозяином новоиспеченной базы: </br>
+ > GRANT ALL PRIVILEGES ON wp1.* TO wp@localhost IDENTIFIED BY 'wp-password'; </br>
+Перезапускаем привилегии базы: </br>
+ > FLUSH PRIVILEGES; </br>
+Выходим из базы: </br>
+ > exit </br>
 _____
 # Configure Network interfaces
 Now, we should modify both(enp0s8 & enp0s9) configuration files as shown below. First, let us start from enp0s8.
