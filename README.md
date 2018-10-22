@@ -1,6 +1,6 @@
-Делаем первоначальные настройки базы данныз;
-# /usr/bin/mysql_secure_installation
-потом везде жмем «Y«:
+### Делаем первоначальные настройки базы данныз;
+> /usr/bin/mysql_secure_installation
+### потом везде жмем «Y«:
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB </br>
 SERVERS IN PRODUCTION USE! PLEASE READ EACH STEP CAREFULLY! </br>
 In order to log into MariaDB to secure it, we'll need the current </br>
@@ -45,22 +45,23 @@ All done! If you've completed all of the above steps, your MariaDB </br>
 installation should now be secure. </br>
 Thanks for using MariaDB! </br>
 
-Создаем базу для WordPress: </br>
-Входим в базу данных: </br>
-## mysql -u root -p
-Придумываем имя для базы данных и создаем ее: </br>
- > CREATE DATABASE wp1; </br>
-Создаем пользователя для этой базы данных: </br>
- > CREATE USER wp@localhost; </br>
-Устанавливаем ему пароль: </br>
- > SET PASSWORD FOR wp@localhost= PASSWORD("wp-password"); </br>
-Делаем этого пользователя хозяином новоиспеченной базы: </br>
- > GRANT ALL PRIVILEGES ON wp1.* TO wp@localhost IDENTIFIED BY 'wp-password'; </br>
-Перезапускаем привилегии базы: </br>
- > FLUSH PRIVILEGES; </br>
-Выходим из базы: </br>
- > exit </br>
+### Создаем базу для WordPress:
+### Входим в базу данных:
 _____
+> mysql -u root -p
+### Придумываем имя для базы данных и создаем ее:
+ > CREATE DATABASE wp1; </br>
+### Создаем пользователя для этой базы данных:
+ > CREATE USER wp@localhost; </br>
+### Устанавливаем ему пароль:
+ > SET PASSWORD FOR wp@localhost= PASSWORD("wp-password"); </br>
+### Делаем этого пользователя хозяином новоиспеченной базы:
+ > GRANT ALL PRIVILEGES ON wp1.* TO wp@localhost IDENTIFIED BY 'wp-password'; </br>
+### Перезапускаем привилегии базы:
+ > FLUSH PRIVILEGES; </br>
+### Выходим из базы:
+ > exit </br>
+____
 # Configure Network interfaces
 Now, we should modify both(enp0s8 & enp0s9) configuration files as shown below. First, let us start from enp0s8. </br>
 Edit file /etc/sysconfig/network-scripts/ifcfg-enp0s8, </br>
