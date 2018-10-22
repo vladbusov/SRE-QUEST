@@ -1,0 +1,43 @@
+default menu.c32
+prompt 0
+timeout 300
+MENU TITLE Linux PXE Menu
+
+LABEL centos7_x64 minimal install
+MENU LABEL CentOS 7 X64 minimal
+KERNEL netboot/vmlinuz
+APPEND initrd=netboot/initrd.img inst.repo=ftp://192.168.0.77/pub
+
+LABEL centos7_x64 minimal with kikstart
+MENU LABEL CentOS 7 X64 minimal with kickstart
+KERNEL netboot/vmlinuz
+APPEND initrd=netboot/initrd.img inst.repo=ftp://192.168.0.77/pub ks=ftp://192.168.0.77/pub/ks.cfg
+
+LABEL centos7_x64 minimal rescue
+MENU LABEL CentOS 7 X64 minimal with rescue
+KERNEL netboot/vmlinuz
+APPEND initrd=netboot/initrd.img inst.repo=ftp://192.168.0.77/pub rescue
+
+LABEL centos6_x64 minimal install
+MENU LABEL CentOS 6 X64 minimal
+KERNEL netboot6/vmlinuz
+APPEND initrd=netboot6/initrd.img inst.repo=ftp://192.168.0.77/pub/centos6/
+
+LABEL centos6_x64 minimal install kickstart
+MENU LABEL CentOS 6 X64 minimal with kickstart
+KERNEL netboot6/vmlinuz
+APPEND initrd=netboot6/initrd.img inst.repo=ftp://192.168.0.77/pub/centos6/ ks=ftp://192.168.0.77/pub/ks2.cfg
+
+
+LABEL centos6_x64 minimal install
+MENU LABEL CentOS 6 X64 minimal rescue
+KERNEL netboot6/vmlinuz
+APPEND initrd=netboot6/initrd.img inst.repo=ftp://192.168.0.77/pub/centos6/ rescue
+
+LABEL ubuntu 16.04 server x86 install
+MENU LABEL Ubuntu 16.04 server x86 install
+KERNEL netbootu/linux
+APPEND initrd=netbootu/initrd.gz inst.repo=ftp://192.168.0.77/pub/ubuntu/ method=ftp://192.168.0.77/pub/ubuntu/
+
+
+
