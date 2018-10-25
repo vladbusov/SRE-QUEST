@@ -21,7 +21,7 @@ chown -R www-data:www-data /var/www/html/
 chmod -R 755 /var/www/html/
 systemctl restart mysql.service
 systemctl restart apache2.service
-rm /var/www/html/index.php
+rm /var/www/html/index.html
 apt install php libapache2-mod-php php-mysql
 systemctl restart apache2
 
